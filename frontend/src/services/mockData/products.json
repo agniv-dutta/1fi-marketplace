@@ -6,7 +6,7 @@
       "name": "iPhone 17 Pro Max",
       "category": "Electronics",
       "description": "Latest flagship smartphone with advanced camera and processor",
-      "imageUrl": "https://images.unsplash.com/photo-1592286927505-1def25115558?w=900&h=900&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=900&h=900&fit=crop",
       "price": 149999,
       "originalPrice": 159999,
       "discount": 6,
@@ -16,7 +16,7 @@
         {
           "id": "var_001",
           "name": "Color",
-          "options": ["Midnight", "Silver", "Gold", "Blue"]
+          "options": ["Cosmic Orange", "Deep Blue", "Silver"]
         },
         {
           "id": "var_002",
@@ -46,6 +46,13 @@
       "discount": 5,
       "rating": 4.8,
       "reviews": 890,
+      "variants": [
+        {
+          "id": "var_005",
+          "name": "Color",
+          "options": ["Space Black", "Silver"]
+        }
+      ],
       "specifications": {
         "Processor": "M3 Max",
         "RAM": "36GB",
@@ -68,6 +75,13 @@
       "discount": 14,
       "rating": 4.6,
       "reviews": 2100,
+      "variants": [
+        {
+          "id": "var_006",
+          "name": "Color",
+          "options": ["Black", "Silver", "Midnight Blue"]
+        }
+      ],
       "specifications": {
         "Driver Size": "30mm",
         "Battery Life": "40 hours",
@@ -84,7 +98,7 @@
       "name": "iPad Pro 12.9\"",
       "category": "Electronics",
       "description": "High-performance tablet with stunning display",
-      "imageUrl": "https://images.unsplash.com/photo-1544716278-ca5e3af521d6?w=900&h=900&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=900&h=900&fit=crop",
       "price": 84999,
       "originalPrice": 94999,
       "discount": 10,
@@ -93,6 +107,11 @@
       "variants": [
         {
           "id": "var_003",
+          "name": "Color",
+          "options": ["Space Gray", "Silver"]
+        },
+        {
+          "id": "var_003b",
           "name": "Storage",
           "options": ["256GB", "512GB", "1TB", "2TB"]
         }
@@ -113,7 +132,7 @@
       "name": "Samsung 4K Smart TV 55\"",
       "category": "Electronics",
       "description": "Ultra HD smart television with premium features",
-      "imageUrl": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900&h=900&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=900&h=900&fit=crop",
       "price": 64999,
       "originalPrice": 79999,
       "discount": 19,

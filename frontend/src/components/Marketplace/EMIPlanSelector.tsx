@@ -96,14 +96,14 @@ const EMIPlanSelector = ({
             EMI options
           </p>
           <h3 className="mt-1 font-display text-2xl font-semibold text-gray-900">
-            Select a no-cost EMI plan
+            Select an EMI plan
           </h3>
         </div>
         <p className="text-sm text-gray-500">{sortedPlans.length} plans available</p>
       </div>
 
       {loading ? (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-3 lg:grid-cols-2">
           {Array.from({ length: 4 }).map((_, index) => (
             <div key={index} className="h-40 animate-pulse rounded-3xl bg-gray-200" />
           ))}
@@ -114,7 +114,7 @@ const EMIPlanSelector = ({
           <p className="mt-1 text-xs text-gray-500">Check back later for this product.</p>
         </div>
       ) : (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-3 lg:grid-cols-2">
           {sortedPlans.map((plan) => (
             <EMIPlanCard
               key={plan.id}

@@ -1,6 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 import type { EMIPlan, EMICalculation } from '../../types/emi';
-import { formatPrice } from '../../utils/formatters';
+import { formatPercentage, formatPrice } from '../../utils/formatters';
 import Badge from '../UI/Badge';
 import Card from '../UI/Card';
 
@@ -21,9 +21,13 @@ const EMIPlanCard = ({ plan, calculation, isSelected, onSelect }: EMIPlanCardPro
       onClick={onSelect}
     >
       <div className="p-4 sm:p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <Badge tone="brand">0% interest</Badge>
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0 flex-1">
+            {plan.interestRate === 0 ? (
+              <Badge tone="brand">No-cost EMI</Badge>
+            ) : (
+              <Badge tone="brand">{formatPercentage(plan.interestRate)} p.a.</Badge>
+            )}
             <h4 className="mt-3 text-base font-semibold text-gray-900">
               {calculation ? formatPrice(calculation.monthlyAmount) : 'Calculating...'}
               <span className="ml-1 text-sm font-medium text-gray-500">/month</span>
@@ -33,11 +37,11 @@ const EMIPlanCard = ({ plan, calculation, isSelected, onSelect }: EMIPlanCardPro
 
           <div
             className={[
-              'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border',
+              'flex h-6 w-6 shrink-0 items-center justify-center rounded-full border',
               isSelected ? 'border-brand-700 bg-brand-700 text-white' : 'border-gray-300 text-transparent',
             ].join(' ')}
           >
-            <CheckCircle2 className="h-4 w-4" />
+            <CheckCircle2 className="h-3.5 w-3.5" />
           </div>
         </div>
 

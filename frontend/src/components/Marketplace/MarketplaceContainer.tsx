@@ -114,7 +114,7 @@ const MarketplaceContainer = () => {
           </div>
           <div>
             <h2 className="font-display text-3xl font-semibold text-gray-900">
-              Browse products and choose a no-cost EMI plan
+              Browse products and choose an EMI plan
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600">
               Search, filter, and compare products in a mobile-friendly marketplace designed for

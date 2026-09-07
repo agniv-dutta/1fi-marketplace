@@ -24,7 +24,7 @@ const ProductCard = ({ product, onSelect }: ProductCardProps) => {
         <div className="absolute left-3 top-3 flex flex-col gap-2">
           {product.discount ? <Badge tone="danger">{getDiscountBadgeText(product.discount)}</Badge> : null}
           {product.stock < 20 ? <Badge tone="warning">Low Stock</Badge> : null}
-          <Badge tone="brand">0% interest EMI</Badge>
+          <Badge tone="brand">EMI available</Badge>
         </div>
       </div>
 

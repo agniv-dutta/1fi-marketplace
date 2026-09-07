@@ -6,6 +6,11 @@ dist/
 dist-ssr/
 *.local
 
+# TypeScript build info & emitted configs (tsc -b)
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
 # Logs
 logs/
 *.log
