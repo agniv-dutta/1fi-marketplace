@@ -1,0 +1,168 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "prod_001",
+      "name": "iPhone 17 Pro Max",
+      "category": "Electronics",
+      "description": "Latest flagship smartphone with advanced camera and processor",
+      "imageUrl": "https://images.unsplash.com/photo-1592286927505-1def25115558?w=900&h=900&fit=crop",
+      "price": 149999,
+      "originalPrice": 159999,
+      "discount": 6,
+      "rating": 4.5,
+      "reviews": 1250,
+      "variants": [
+        {
+          "id": "var_001",
+          "name": "Color",
+          "options": ["Midnight", "Silver", "Gold", "Blue"]
+        },
+        {
+          "id": "var_002",
+          "name": "Storage",
+          "options": ["256GB", "512GB", "1TB"]
+        }
+      ],
+      "specifications": {
+        "Display": "6.9-inch OLED",
+        "Processor": "A19 Bionic",
+        "Camera": "48MP Main",
+        "Battery": "4000mAh"
+      },
+      "emiAvailable": true,
+      "emiPlanIds": ["emi_12m", "emi_18m", "emi_24m"],
+      "stock": 45,
+      "featured": true
+    },
+    {
+      "id": "prod_002",
+      "name": "MacBook Pro 16\"",
+      "category": "Electronics",
+      "description": "Powerful laptop for professionals and creators",
+      "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=900&h=900&fit=crop",
+      "price": 199999,
+      "originalPrice": 209999,
+      "discount": 5,
+      "rating": 4.8,
+      "reviews": 890,
+      "specifications": {
+        "Processor": "M3 Max",
+        "RAM": "36GB",
+        "Storage": "1TB SSD",
+        "Display": "16-inch Liquid Retina XDR"
+      },
+      "emiAvailable": true,
+      "emiPlanIds": ["emi_12m", "emi_18m", "emi_24m"],
+      "stock": 20,
+      "featured": true
+    },
+    {
+      "id": "prod_003",
+      "name": "Sony WH-1000XM5 Headphones",
+      "category": "Electronics",
+      "description": "Premium noise-cancelling wireless headphones",
+      "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900&h=900&fit=crop",
+      "price": 29999,
+      "originalPrice": 34999,
+      "discount": 14,
+      "rating": 4.6,
+      "reviews": 2100,
+      "specifications": {
+        "Driver Size": "30mm",
+        "Battery Life": "40 hours",
+        "Noise Cancellation": "Industry-leading ANC",
+        "Connectivity": "Bluetooth 5.3"
+      },
+      "emiAvailable": true,
+      "emiPlanIds": ["emi_6m", "emi_9m", "emi_12m"],
+      "stock": 100,
+      "featured": false
+    },
+    {
+      "id": "prod_004",
+      "name": "iPad Pro 12.9\"",
+      "category": "Electronics",
+      "description": "High-performance tablet with stunning display",
+      "imageUrl": "https://images.unsplash.com/photo-1544716278-ca5e3af521d6?w=900&h=900&fit=crop",
+      "price": 84999,
+      "originalPrice": 94999,
+      "discount": 10,
+      "rating": 4.7,
+      "reviews": 1540,
+      "variants": [
+        {
+          "id": "var_003",
+          "name": "Storage",
+          "options": ["256GB", "512GB", "1TB", "2TB"]
+        }
+      ],
+      "specifications": {
+        "Display": "12.9-inch Liquid Retina XDR",
+        "Processor": "M2 Chip",
+        "Camera": "12MP + LiDAR",
+        "Battery": "Up to 10 hours"
+      },
+      "emiAvailable": true,
+      "emiPlanIds": ["emi_9m", "emi_12m", "emi_18m"],
+      "stock": 35,
+      "featured": true
+    },
+    {
+      "id": "prod_005",
+      "name": "Samsung 4K Smart TV 55\"",
+      "category": "Electronics",
+      "description": "Ultra HD smart television with premium features",
+      "imageUrl": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900&h=900&fit=crop",
+      "price": 64999,
+      "originalPrice": 79999,
+      "discount": 19,
+      "rating": 4.4,
+      "reviews": 890,
+      "specifications": {
+        "Display": "55-inch 4K QLED",
+        "Refresh Rate": "120Hz",
+        "Smart Features": "Tizen OS",
+        "Sound": "40W Dolby Atmos"
+      },
+      "emiAvailable": true,
+      "emiPlanIds": ["emi_12m", "emi_18m", "emi_24m"],
+      "stock": 28,
+      "featured": false
+    },
+    {
+      "id": "prod_006",
+      "name": "Nike Air Zoom Pegasus 41",
+      "category": "Sports",
+      "description": "Responsive running shoes for everyday training",
+      "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&h=900&fit=crop",
+      "price": 12999,
+      "originalPrice": 14999,
+      "discount": 13,
+      "rating": 4.3,
+      "reviews": 520,
+      "variants": [
+        {
+          "id": "var_004",
+          "name": "Size",
+          "options": ["UK 7", "UK 8", "UK 9", "UK 10"]
+        }
+      ],
+      "specifications": {
+        "Upper": "Engineered mesh",
+        "Midsole": "React foam",
+        "Outsole": "Durable rubber",
+        "Use": "Running"
+      },
+      "emiAvailable": true,
+      "emiPlanIds": ["emi_6m", "emi_9m", "emi_12m"],
+      "stock": 74,
+      "featured": false
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "limit": 20,
+    "total": 6
+  }
+}
