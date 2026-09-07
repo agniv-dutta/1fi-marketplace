@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useProducts } from '../../hooks/useProducts';
 import { useProductFilters } from '../../hooks/useProductFilters';
-import type { Product } from '../../types/product';
+import { useDebouncedValue } from '../../hooks/useDebouncedValue';
+import type { Product, ProductFilters } from '../../types/product';
 import type { SelectedEMI } from '../../types/emi';
 import { checkoutApi } from '../../services/api/checkoutApi';
 import SearchBar from '../Common/SearchBar';
@@ -33,11 +34,19 @@ const getInitialVariants = (product: Product): Record<string, string> => {
 const MarketplaceContainer = () => {
   const { filters, setFilters, resetFilters } = useProductFilters();
   const { products, loading, error, refetch, fetchProducts } = useProducts();
+  const [searchInput, setSearchInput] = useState(filters.search ?? '');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedEMI, setSelectedEMI] = useState<SelectedEMI | null>(null);
   const [selectedVariants, setSelectedVariants] = useState<Record<string, string>>({});
   const [isProcessing, setIsProcessing] = useState(false);
   const [notice, setNotice] = useState<Notice | null>(null);
+
+  const debouncedSearch = useDebouncedValue(searchInput, 300);
+
+  const effectiveFilters: ProductFilters = useMemo(
+    () => ({ ...filters, search: debouncedSearch || undefined }),
+    [filters, debouncedSearch],
+  );
 
   const featuredCount = useMemo(
     () => products.filter((product) => product.featured).length,
@@ -45,12 +54,25 @@ const MarketplaceContainer = () => {
   );
 
   useEffect(() => {
-    void fetchProducts(filters, 1);
+    void fetchProducts(effectiveFilters, 1);
     setSelectedProduct(null);
     setSelectedEMI(null);
     setSelectedVariants({});
     setNotice(null);
-  }, [fetchProducts, filters]);
+  }, [fetchProducts, effectiveFilters]);
+
+  const handleFilterChange = useCallback(
+    (next: ProductFilters) => {
+      setSearchInput(next.search ?? '');
+      setFilters(next);
+    },
+    [setFilters],
+  );
+
+  const handleResetFilters = useCallback(() => {
+    resetFilters();
+    setSearchInput('');
+  }, [resetFilters]);
 
   const handleSelectProduct = (product: Product) => {
     setSelectedProduct(product);
@@ -125,14 +147,14 @@ const MarketplaceContainer = () => {
 
         <div className="w-full max-w-xl">
           <SearchBar
-            value={filters.search ?? ''}
-            onChange={(value) => setFilters({ ...filters, search: value || undefined })}
+            value={searchInput}
+            onChange={setSearchInput}
             placeholder="Search by product name, category, or keyword"
           />
         </div>
       </div>
 
-      <Filters filters={filters} onChange={setFilters} />
+      <Filters filters={filters} onChange={handleFilterChange} />
 
       {notice ? (
         <div
@@ -156,7 +178,7 @@ const MarketplaceContainer = () => {
           title="No products found"
           description="No results match your current search or filters."
           actionLabel="Reset filters"
-          onAction={resetFilters}
+          onAction={handleResetFilters}
         />
       ) : (
         <ErrorBoundary>

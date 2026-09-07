@@ -62,7 +62,7 @@ export const useEMIPlan = (): UseEMIPlanReturn => {
       if (plan) {
         setSelectedPlan({
           planId,
-          monthlyAmount: calculateMonthlyEMI(productPrice, 0, plan.tenure),
+          monthlyAmount: calculateMonthlyEMI(productPrice, plan.interestRate / 100 / 12, plan.tenure),
           tenure: plan.tenure,
         });
       }
